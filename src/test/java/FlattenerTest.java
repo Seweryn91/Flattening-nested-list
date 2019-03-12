@@ -16,6 +16,20 @@ class FlattenerTest {
         assertEquals(actual, expected);
     }
 
+    private List<Object> createNestedList() {
+        List<Object> basicList = createNotNestedList();
+        List<Object> nestedList = new ArrayList<>();
+        nestedList.add("This string");
+        nestedList.add(0);
+        nestedList.add("is part");
+        nestedList.add(1);
+        nestedList.add("of a nested list");
+        basicList.add(nestedList);
+        basicList.add(9);
+        basicList.add("and this string is not");
+        return basicList;
+    }
+
     private List<Object> createNotNestedList() {
         List<Object> basicList = new ArrayList<>();
         basicList.add("Str1");
