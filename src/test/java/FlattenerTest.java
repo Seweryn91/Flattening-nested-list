@@ -40,6 +40,24 @@ class FlattenerTest {
         return basicList;
     }
 
+    private List<Object> createNestedNestedList() {
+        List<Object> superior = new ArrayList<>();
+        superior.add("outside string");
+        superior.add(0);
+
+        List<Object> medio = new ArrayList<>();
+        medio.add("middle string");
+        medio.add(1);
+
+        List<Object> inferior = new ArrayList<>();
+        inferior.add("inner string");
+        inferior.add(2);
+
+        medio.add(inferior);
+        superior.add(medio);
+        return superior;
+    }
+
     private List<Object> createNotNestedList() {
         List<Object> basicList = new ArrayList<>();
         basicList.add("Str1");
