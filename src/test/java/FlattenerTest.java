@@ -7,6 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FlattenerTest {
 
+    @Test
+    void testFlattener_notNestedList() {
+        Flattener flattener = new Flattener();
+        List<Object> testList = createNotNestedList();
+        String expected = "[Str1, 1, 2, 3, Str2, 4, 5, 6, Str3, 6, 7, 8]";
+        String actual = flattener.flattenRecursively(testList).toString();
+        assertEquals(actual, expected);
+    }
 
     private List<Object> createNotNestedList() {
         List<Object> basicList = new ArrayList<>();
