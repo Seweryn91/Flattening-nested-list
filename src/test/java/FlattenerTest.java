@@ -26,6 +26,17 @@ class FlattenerTest {
         assertEquals(actual, expected);
     }
 
+    @Test
+    void testFlattener_nestedNestedList() {
+        Flattener flattener = new Flattener();
+        List<Object> nestedNestedList = createNestedNestedList();
+        String actual =  flattener.flattenRecursively(nestedNestedList).toString();
+        String expected = "[outside string, 0, middle string, 1, inner string, 2]";
+        assertEquals(actual, expected);
+
+    }
+
+
     private List<Object> createNestedList() {
         List<Object> basicList = createNotNestedList();
         List<Object> nestedList = new ArrayList<>();
