@@ -6,7 +6,7 @@ public class Flattener {
     private List<Object> flat = new ArrayList<>();
 
     @SuppressWarnings("unchecked")
-    List<Object> flattenRecursively(List<Object> multidimensionalList) {
+    public List<Object> flattenRecursively(List<Object> multidimensionalList) {
         for (Object object : multidimensionalList) {
             if (object instanceof List)
             flatten( (List<Object>) object);
