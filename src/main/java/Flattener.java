@@ -8,8 +8,7 @@ public class Flattener {
     @SuppressWarnings("unchecked")
     public List<Object> flattenRecursively(List<Object> multidimensionalList) {
         for (Object object : multidimensionalList) {
-            if (object instanceof List)
-            flatten( (List<Object>) object);
+            if (object instanceof List) flatten( (List<Object>) object);
             else flat.add(object);
         }
         return flat;
